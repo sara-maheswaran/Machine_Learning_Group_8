@@ -5,28 +5,36 @@ Customer Segmentation for Targeted Marketing Optimization
 
 
 ## Project Overview
-This project applies unsupervised machine learning techniques to segment customers based on purchasing behavior, demographics, and campaign engagement. The objective is to identify distinct customer groups that enable targeted marketing strategies and improved business decision-making. Through feature engineering, clustering, and evaluation metrics, we aim to generate actionable insights that improve targeted marketing strategies and optimize business performance.
+This project utilizes advanced machine learning techniques to transition marketing strategies from generalized outreach to highly targeted, data-driven campaigns. The analysis is split into two core objectives: identifying hidden customer segments through unsupervised clustering, and building predictive classification models to determine a customer’s likelihood to accept future promotions. Ultimately, this approach empowers the business to allocate marketing spend efficiently, maximize campaign ROI, and engage the right customers with the right offers.
 
 ## Business Problem
 The company currently applies broad, non-personalized marketing campaigns across its entire customer base. This leads to:
 
 - Inefficient marketing spend
+    * Utilizing a generalized strategy increases marketing spend by wasting budget on demographic segments with a near-zero probability of conversion
 - Low campaign conversion rates
+    * One-size-fits-all approaches for campaigns results in ignored promotions and stagnant sales throughput, despite high-volume outreach
 - Poor differentiation between high-value and low-value customers
+    * Without customer segmentation, customers who are highly profitable are treated the same as one-off buyers, thus leaving revenue streams open to competitor offers 
 - Missed upselling and retention opportunities
+    * High-probability cross-sell opportunities are missed and instead the company waits for customers to churn before trying to save them
 
-There is a need for data-driven segmentation to better understand customer behavior and tailor strategies accordingly.
+There is a critical need for data-driven segmentation and predictive modeling to understand customer behavior, anticipate their actions, and tailor marketing strategies accordingly.
 
 ## Stakeholders
 The primary audience is:
 - Marketing Managers
+    * Customer segmentation will allow marketing managers to know who their most profitable customers are and how to reach them efficiently with ads tailored to their purchasing habits
 - CRM / Customer Experience Teams
+    * Loyalty programs and automated emails with tailored campaigns can be developed to decrease recency and build re-engagement where needed
 - Business Strategy Executives
+    * Overall company business strategies can be driven based on customer purchasing behaviour
 - Sales Leadership
+    * Insights into where customers make purchases can guide where investments can be made to increase sales - ex. store expansions vs e-commerce infrastructure 
 
 Secondary audience:
-
 - Data team / Analytics team (for implementation)
+    * Results from clustering and the models created can be used to update other tools used by the company as required (ex. Salesforce), modify to process larger datasets, or retrain the model when new data is available
 
 ## Business Objective
 The primary objective of this project is to:
