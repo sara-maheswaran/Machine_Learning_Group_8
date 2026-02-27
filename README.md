@@ -1,4 +1,4 @@
-# Machine_Learning_Group_8
+# **Project Model**: Machine_Learning_Group_8
 
 ## Project Title
 Customer Segmentation for Targeted Marketing Optimization
@@ -29,14 +29,66 @@ Secondary audience:
 - Data team / Analytics team (for implementation)
 
 ## Business Objective
-The primary objective of this project is to:
-- Identify distinct customer clusters using purchasing and demographic data.
-- Improve marketing targeting strategies.
-- Increase campaign effectiveness and ROI.
-- Support long-term customer retention and revenue growth.
+To leverage customer segmentation for targeted marketing, enhancing campaign effectiveness and driving long-term retention and revenue growth.
 
-Success is measured through cluster interpretability, internal validation metrics, and business usefulness of the segments.
+The primary project goals are to:
+- Identify distinct customer clusters based on purchasing behavior, demographics, and engagement metrics to drive tailored marketing initiatives.
+- Enhance marketing targeting strategies by leveraging insights from customer lifetime value (CLV) and satisfaction levels, ensuring personalized communication that resonates with each segment.
+- Increase campaign effectiveness and ROI through data-driven segmentation, allowing for precise resource allocation and optimized marketing spend.
+- Support long-term customer retention and revenue growth by developing strategies that cater to customer needs and preferences, informed by real-time data and macro-economic conditions.
 
+**Success is measured through cluster interpretability, internal validation metrics, and business applicability, ensuring actionable insights that guide decision-making and foster alignment among stakeholders.**
+
+## Risks and Unknowns
+### Risks
+**1. Poor Cluster Interpretability:** Clusters may not be clearly distinct or actionable.
+
+>Mitigation plan: Use validation metrics, limit cluster count, perform clear profiling, and validate with business stakeholders. Integrate visualization techniques to intuitively show cluster separations to stakeholders.
+
+**2. Data Quality Issues:** Missing income values, outliers (extreme spending), and/or inaccurate customer demographics.
+>Mitigation plan: Clean data systematically (imputation, outlier treatment), conduct EDA, and document preprocessing steps. Employ automated monitoring systems to track data quality and report anomalies in real-time.
+
+**3. Over-Segmentation:** Too many clusters may confuse marketing teams and/or complicate execution.
+>Mitigation plan: Select optimal cluster number using statistical methods and align with business execution capacity. Use automated tools to assist in determining the ideal number of clusters (e.g. elbow method).
+
+**4. Static Segmentation:** Customer behavior changes over time.
+>Mitigation plan: Retrain models periodically and incorporate recency-based features to capture behavioral changes. Implement dynamic segmentation that adapts to real-time data, ensuring ongoing relevance and accuracy.
+
+**5. External Factors:** Economic downturn, seasonality, product changes may impact behavior, consumer preferences.
+>Mitigation plan: Monitor model performance over time and reassess assumptions during economic or seasonal shifts. Users should create contingency plans and flexible strategies based on external factors, ensuring resilience and adaptability.
+
+### Unknowns
+- Customer Lifetime Value (CLV): *Uncertainty regarding the true CLV of segments, impacting marketing priorities.*
+- Customer Satisfaction: *Unknown satisfaction levels, influencing retention and campaign effectiveness.*
+- Competitor Influence: *Uncertainty about how competitor actions may affect customer behavior.*
+- Macro-Economic Conditions: *Potential impact of economic factors on purchasing behavior and marketing success.*
+- Variability in Customer Response: *Unclear how different segments will respond to targeted marketing strategies.*
+
+- Resource Availability: *Uncertain levels of resources for implementing targeted strategies.*
+***
+# Repository Structure - **to update*
+
+```
+├── data
+    └── preprocessed
+    └── raw
+    └── sql
+├── experiments
+├── models
+├── reports
+├── src
+├── .gitignore
+├── README.md
+```
+
+### Requirements - **placeholder link to update*
+- Specific libraries/frameworks suited to project requirements: [pyproject.toml](http://google.com) file
+
+### Installation and Run - **placeholder link to update*
+- See [SETUP.md](http://google.com) file
+
+***
+# **Project Model**: Customer Segmentation for Targeted Marketing Optimization
 ## Dataset Description
 ### Source: [Kaggle – Customer Personality Analysis Dataset](https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis?resource=download)
 The dataset contains customer demographic information, purchasing behavior, and campaign response history.
@@ -46,57 +98,88 @@ The dataset contains customer demographic information, purchasing behavior, and 
 
 Each row represents a unique customer, and each column represents demographic information, purchasing behavior, or campaign interaction history.
 
-### Key Variables Categories:
-### Demographics
-- Income
-- Year_Birth
-- Education
-- Marital_Status
-- Kidhome, Teenhome (Number of Children)
-### Spending Behavior
-Amount spent on wines, fruits, meat, fish, sweets, and gold products:
-- MntWines
-- MntFruits
-- MntMeatProducts
-- MntFishProducts
-- MntSweetProducts
-- MntGoldProds
-### Purchase Behavior/Channels
-- NumWebPurchases (Web purchases)
-- NumCatalogPurchases (Catalog purchases)
-- NumStorePurchases (Store purchases)
-- NumWebVisitsMonth (Website visits per month)
-### Engagement
-- Recency (days since last purchase)
-- AcceptedCmp1–AcceptedCmp5 (Campaign acceptance indicators)
-- Response (target variable: campaign acceptance)
+### Key Variables and Attributes:
+| Variable Name      | Type          | Description                                                        | Category            |
+|--------------------|---------------|--------------------------------------------------------------------|---------------------|
+| ID                 | Integer       | Customer's unique identifier                                       | Identification      |
+| Year_Birth         | Integer       | Customer's birth year                                              | Demographic          |
+| Education          | Categorical   | Customer's education level                                         | Demographic          |
+| Marital_Status      | Categorical   | Customer's marital status                                         | Demographic          |
+| Income             | Integer       | Customer's yearly household income                                  | Demographic          |
+| Kidhome            | Integer       | Number of children in customer's household                          | Demographic          |
+| Teenhome           | Integer       | Number of teenagers in customer's household                         | Demographic          |
+| Dt_Customer        | Date          | Date of customer's enrollment with the company                     | Temporal             |
+| Recency            | Integer       | Number of days since customer's last purchase                     | Behavioral           |
+| Complain           | Integer       | 1 if customer complained in the last 2 years, 0 otherwise         | Behavioral           |
+| MntWines           | Integer       | Amount spent on wine in the last 2 years                          | Spending Behavior    |
+| MntFruits          | Integer       | Amount spent on fruits in the last 2 years                        | Spending Behavior    |
+| MntMeatProducts    | Integer       | Amount spent on meat in the last 2 years                          | Spending Behavior    |
+| MntFishProducts    | Integer       | Amount spent on fish in the last 2 years                          | Spending Behavior    |
+| MntSweetProducts    | Integer       | Amount spent on sweets in the last 2 years                        | Spending Behavior    |
+| MntGoldProds      | Integer       | Amount spent on gold in the last 2 years                          | Spending Behavior    |
+| NumDealsPurchases  | Integer       | Number of purchases made with a discount                         | Promotion Behavior   |
+| AcceptedCmp1       | Integer       | 1 if customer accepted the offer in the 1st campaign, 0 otherwise | Promotion Activity   |
+| AcceptedCmp2       | Integer       | 1 if customer accepted the offer in the 2nd campaign, 0 otherwise | Promotion Activity   |
+| AcceptedCmp3       | Integer       | 1 if customer accepted the offer in the 3rd campaign, 0 otherwise | Promotion Activity   |
+| AcceptedCmp4       | Integer       | 1 if customer accepted the offer in the 4th campaign, 0 otherwise | Promotion Activity   |
+| AcceptedCmp5       | Integer       | 1 if customer accepted the offer in the 5th campaign, 0 otherwise | Promotion Activity   |
+| Response           | Integer       | 1 if customer accepted the offer in the last campaign, 0 otherwise | Promotion Activity   |
+| NumWebPurchases    | Integer       | Number of purchases made through the company's website             | Activity             |
+| NumCatalogPurchases | Integer       | Number of purchases made using a catalogue                         | Activity             |
+| NumStorePurchases   | Integer       | Number of purchases made directly in stores                       | Activity             |
+| NumWebVisitsMonth   | Integer       | Number of visits to the company's website in the last month       | Activity             |
 
-## Risks and Unknowns
-### Risks
-- Poor Cluster Interpretability: Clusters may not be clearly distinct or actionable.
-Mitigation: Use validation metrics, limit cluster count, perform clear profiling, and validate with business stakeholders.
+***
+# <code style="background:white;color:black">* WEEK 2 COMING SOON: * WIP BELOW</code>
 
-- Data Quality Issues: Missing income values, Outliers (extreme spending), Inaccurate customer demographics
-Mitigation: Clean data systematically (imputation, outlier treatment), conduct EDA, and document preprocessing steps.
+## Methodology
 
-- Over-Segmentation: Too many clusters may confuse marketing teams and/or complicate execution.
-Mitigation: Select optimal cluster number using statistical methods and align with business execution capacity.
-
-- Static Segmentation: Customer behavior changes over time.
-Mitigation: Retrain models periodically and incorporate recency-based features to capture behavioral changes.
-
-- External Factors: Economic downturn, seasonality, product changes may impact behavior.
-Mitigation: Monitor model performance over time and reassess assumptions during economic or seasonal shifts.
-
-### Unknowns
-- True customer lifetime value (CLV)
-- Customer satisfaction levels
-- Competitor influence
-- Macro-economic conditions
-- Marketing budget constraints
+### Data Cleaning
 
 
+<input type="checkbox">
+<label>Why we cleaned our data, and the best strategy </label><br>
+<input type="checkbox">
+<label>Missing values or outliers addressed through preprocessing</label><br>
 
+### Exploratory Data Analysis
 
+<input type="checkbox">
+<label>How we explored the relationships between different variables </label><br>
+<input type="checkbox">
+<label>Types of patterns/trends in our data </label><br>
 
+### Model Development
 
+This is documentation of the machine learning pipeline and model architecture for future reference:
+
+<input type="checkbox">
+<label>Specific objectives and success criteria for our machine learning model</label><br>
+<input type="checkbox">
+<label>Relevant features for training</label><br>
+<input type="checkbox">
+<label>Machine learning algorithms that were suitable for our problem domain</label><br>
+<input type="checkbox">
+<label>Techniques used to validate and tune the hyperparameters</label><br>
+<input type="checkbox">
+<label>How data was split into training, validation, and test sets</label><br>
+
+## Results | Final Products
+
+### Models
+- See [Models](models) folder
+
+#### Ethical Implications / Biases:
+<input type="checkbox">
+<label>Ethical implications or biases associated with our machine learning model</label><br>
+
+### Project Showcase Pitch Deck
+- See [Reports](reports) folder
+
+### Individual Reflection Videos - **placeholder links to update*
+- [Shaifali Tailor](http://google.com)
+- [Iris Jiongco](http://google.com) 
+- [Saraneya Maheswaran](http://google.com)
+- [David Ancor](http://google.com)
+- [Anika Chowdhury](http://google.com)
+- [Stella Hoang](http://google.com)
