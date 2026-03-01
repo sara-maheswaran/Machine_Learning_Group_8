@@ -40,12 +40,10 @@ Secondary audience:
 To leverage customer segmentation for targeted marketing, enhancing campaign effectiveness and driving long-term retention and revenue growth.
 
 The primary project goals are to:
-- Identify distinct customer clusters based on purchasing behavior, demographics, and engagement metrics to drive tailored marketing initiatives.
-- Enhance marketing targeting strategies by leveraging insights from customer lifetime value (CLV) and satisfaction levels, ensuring personalized communication that resonates with each segment.
-- Increase campaign effectiveness and ROI through data-driven segmentation, allowing for precise resource allocation and optimized marketing spend.
-- Support long-term customer retention and revenue growth by developing strategies that cater to customer needs and preferences, informed by real-time data and macro-economic conditions.
+- Identify distinct customer clusters based on purchasing behavior, demographics, and engagement metrics.
+- Increase campaign effectiveness and ROI by allowing for precise resource allocation and optimized marketing spend.
 
-**Success is measured through cluster interpretability, internal validation metrics, and business applicability, ensuring actionable insights that guide decision-making and foster alignment among stakeholders.**
+**Success is measured by the clarity, validity, and business applicability of these clusters, ensuring they provide actionable insights that align stakeholders and confidently guide revenue strategies.**
 
 ## Risks and Unknowns
 ### Risks
