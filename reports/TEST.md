@@ -118,7 +118,7 @@ The primary project goals are to:
 - Specific libraries/frameworks suited to project requirements: [pyproject.toml](pyproject.toml) file
 
 ### Installation and Run - **placeholder link to update*
-- See [SETUP.md](SETUP.md) file
+- See [SETUP.md](../..SETUP.md) file
 
 ***
 ## Dataset Description
@@ -187,20 +187,20 @@ Any random seeds or states used to ensure reproducibility are documented directl
 #### Demographics
 The majority of customers are married and hold a graduation-level education. The average customer age is approximately 57 years. A small number of unrealistic age outliers were identified and will need to be handled. Understanding age distribution helps determine how purchasing patterns vary across life stages.
 
-![alt text](images/age_distribution_with_mean_and_outlier_bounds.png)
+![alt text](../images/age_distribution_with_mean_and_outlier_bounds.png)
 
 
 #### Income Analysis
 The average income is approximately 51,381, but income distribution is highly skewed due to a small number of extremely high-income customers. This creates imbalance and requires scaling and outlier treatment before segmentation. Income is expected to be one of the strongest predictors of spending behavior.
 
-![alt text](images/income_distribution_with_mean_and_outlier_bounds.png)
+![alt text](../images/income_distribution_with_mean_and_outlier_bounds.png)
 
 
 
 #### Spending Behavior
 Customers spend the most on wines and meat products compared to other categories. Overall spending patterns are not evenly distributed, meaning some customers spend significantly more than others. This variation is valuable for segmentation, as it helps distinguish high-value customers from low-spending ones.
 
-![alt text](images/total_spending_by_product_category.png)
+![alt text](../images/total_spending_by_product_category.png)
 
 
 
@@ -209,27 +209,27 @@ Spending behavior changes depending on whether customers have children at home. 
 
 
 
-![alt text](images/percentage_stacked_bar_plot_product_vs_children_at_home.png)
+![alt text](../images/percentage_stacked_bar_plot_product_vs_children_at_home.png)
 
 
 #### Purchase Channels
 Customers most frequently make purchases in physical stores, followed by web and catalog channels. This indicates that offline presence remains important, although digital channels still play a significant role. Understanding channel preference allows for better campaign targeting.
 
-![alt text](images/purchases_by_channel.png)
+![alt text](../images/purchases_by_channel.png)
 
 
 
 #### Age Group Spending Patterns
 Spending habits vary across age groups. Certain age segments spend more overall, while others show stronger preferences for specific product categories. Segmenting by age group can therefore improve marketing personalization and promotional targeting.
 
-![alt text](images/ave_spending_by_age_group.png)
+![alt text](../images/ave_spending_by_age_group.png)
 
 
 
 #### Correlation Insights
 Spending categories are strongly related to each other, meaning customers who spend heavily in one category often spend heavily in others. Income, recency of purchase, and total spending appear to be particularly important variables for identifying meaningful customer segments.
 
-![alt text](images/correlation_heatmap.png)
+![alt text](../images/correlation_heatmap.png)
 
 
 
@@ -259,7 +259,7 @@ The analysis shows clear differences in income levels, spending behavior, produc
   - **Feature Engineering:** Created `Age`, `Total_Spending`, `Total_Purchases`, `Children_at_home`, `Family_Size`.  
   - **Log Transformation of Spending:** Spending variables were log-transformed to reduce skew.  
 
-For more details, see [Data Preprocessing](data/preprocessed/README.md).
+For more details, see [Data Preprocessing](../data/preprocessed/README.md).
    
 
 This is documentation of the machine learning pipeline and model architecture for future reference:
@@ -286,8 +286,8 @@ We selected **K-Means clustering** because it works exceptionally well with nume
 
 This project produced a validated customer segmentation model that grouped customers into **four clear behavioral segments** based on how recently they purchase, how often they buy, and how much they spend. The model was tested using both the **Elbow Method** and **Silhouette Score**, which confirmed that four segments provide the best balance between clarity and accuracy. The final deliverables include the cleaned dataset, RFM feature framework, clustering model, validation analysis, PCA visualization, and executive-ready materials.  
 
-![alt text](images/elbow_and_silhoutte_score.png) 
-![alt text](images/customer_segments_visualized_in_2D.png)
+![alt text](../images/elbow_and_silhoutte_score.png) 
+![alt text](../images/customer_segments_visualized_in_2D.png)
 
 The key finding is that customers naturally fall into four meaningful groups: high-value customers, loyal repeat buyers, at-risk customers who may stop purchasing, and low-engagement customers with growth potential. These segments are easy to understand and can be directly used by the marketing team to create targeted campaigns instead of sending the same message to everyone. To implement this, customers should be tagged by segment in the CRM system, campaigns should be tailored to each group, and performance should be tracked regularly to measure ROI and monitor customer movement between segments.
 
@@ -306,7 +306,7 @@ During the project, several adjustments were made to improve the reliability and
 
 #### Customer Behavior by Segment (RFM Analysis)
 
-![Customer Segmentation RFM](images/clustering_boxplot.png)
+![Customer Segmentation RFM](../images/clustering_boxplot.png)
 
 These boxplots compare how recently customers purchased (Recency), how often they buy (Frequency), and how much they spend (Monetary), showing clear behavioral differences between potential loyal customers, loyal customers, new/occasional buyers, and at-risk or low-value customers.
 
@@ -314,7 +314,7 @@ These boxplots compare how recently customers purchased (Recency), how often the
 
 #### Revenue Contribution by Customer Segment
 
-![Revenue Contribution](images/revenue_contribution_by_segment.png)
+![Revenue Contribution](../images/revenue_contribution_by_segment.png)
 
 This chart shows how much total revenue each customer segment contributes, highlighting that loyal customers and potential loyal customers generate the largest share of overall revenue.
 
@@ -322,7 +322,7 @@ This chart shows how much total revenue each customer segment contributes, highl
 
 #### Silhouette Score Validation (k = 4 Clusters)
 
-![Silhouette Plot](images/silhoutte_k_4.png)
+![Silhouette Plot](../images/silhoutte_k_4.png)
 
 This silhouette plot confirms that four clusters provide well-separated and meaningful customer groups, indicating that the segmentation model effectively distinguishes different purchasing behaviors.
 
@@ -330,7 +330,7 @@ This silhouette plot confirms that four clusters provide well-separated and mean
 
 
 ### Models
-- See [Models](models/) folder
+- See [Models](../models/) folder
 
 #### Ethical Implications / Biases:
 
@@ -360,6 +360,7 @@ Customer data must be handled securely and transparently, and the segmentation s
 - [Iris Jiongco](http://google.com)
 - [David Ancor](http://google.com)
 - [Anika Chowdhury](http://google.com)
+
 
 
 
