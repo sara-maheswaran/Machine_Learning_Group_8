@@ -6,6 +6,23 @@ Data Science Institute, UofT - Cohort 8 - ML Team 8
 ## Table of Contents
 
 
+- [Project Overview](#project-overview)
+- [Business Problem](#business-problem)
+- [Stakeholders](#stakeholders)
+- [Business Objective](#business-objective)
+- [Risks and Unknowns](#risks-and-unknowns)
+- [Dataset Description](#dataset-description)
+- [Methodology](#methodology)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Data Cleaning](#data-cleaning)
+- [Model Description](#model-description)
+- [Results | Final Products](#results--final-products)
+- [Visuals and Credits](#visuals-and-credits)
+- [Ethical Implications / Biases](#ethical-implications--biases)
+- [Team Roles & Responsibilities](#team-roles--responsibilities)
+- [Individual Reflection Videos](#individual-reflection-videos)
+
+
 ## Project Overview
 This project utilizes advanced machine learning techniques to transition marketing strategies from generalized outreach to highly targeted, data-driven campaigns. The analysis is split into two core objectives: identifying hidden customer segments through unsupervised clustering, and building predictive classification models to determine a customer’s likelihood to accept future promotions. Ultimately, this approach empowers the business to allocate marketing spend efficiently, maximize campaign ROI, and engage the right customers with the right offers.
 
@@ -82,7 +99,7 @@ The primary project goals are to:
 </details>
 
 ***
-# Repository Structure - **to update*
+# Repository Structure 
 
 ```
 ├── data
@@ -90,9 +107,9 @@ The primary project goals are to:
     └── raw
     └── sql
 ├── experiments
+├── images
 ├── models
 ├── reports
-├── src
 ├── .gitignore
 ├── README.md
 ```
@@ -170,55 +187,54 @@ Any random seeds or states used to ensure reproducibility are documented directl
 #### Demographics
 The majority of customers are married and hold a graduation-level education. The average customer age is approximately 57 years. A small number of unrealistic age outliers were identified and will need to be handled. Understanding age distribution helps determine how purchasing patterns vary across life stages.
 
-![alt text](image.png)
+![alt text](images/age_distribution_with_mean_and_outlier_bounds.png)
 
----
 
 #### Income Analysis
 The average income is approximately 51,381, but income distribution is highly skewed due to a small number of extremely high-income customers. This creates imbalance and requires scaling and outlier treatment before segmentation. Income is expected to be one of the strongest predictors of spending behavior.
 
-![alt text](image-1.png)
+![alt text](images/income_distribution_with_mean_and_outlier_bounds.png)
 
----
+
 
 #### Spending Behavior
 Customers spend the most on wines and meat products compared to other categories. Overall spending patterns are not evenly distributed, meaning some customers spend significantly more than others. This variation is valuable for segmentation, as it helps distinguish high-value customers from low-spending ones.
 
-![alt text](image-2.png)
+![alt text](images/total_spending_by_product_category.png)
 
----
+
 
 #### Household Structure and Purchasing
 Spending behavior changes depending on whether customers have children at home. Households with different family sizes show differences in total purchases and product category preferences. This suggests that family structure is an important segmentation factor.
 
-![alt text](image-3.png)
-![alt text](image-4.png)
 
----
+
+![alt text](images/percentage_stacked_bar_plot_product_vs_children_at_home.png)
+
 
 #### Purchase Channels
 Customers most frequently make purchases in physical stores, followed by web and catalog channels. This indicates that offline presence remains important, although digital channels still play a significant role. Understanding channel preference allows for better campaign targeting.
 
-![alt text](image-6.png)
+![alt text](images/purchases_by_channel.png)
 
----
+
 
 #### Age Group Spending Patterns
 Spending habits vary across age groups. Certain age segments spend more overall, while others show stronger preferences for specific product categories. Segmenting by age group can therefore improve marketing personalization and promotional targeting.
 
-![alt text](image-5.png)
+![alt text](images/ave_spending_by_age_group.png)
 
----
+
 
 #### Correlation Insights
 Spending categories are strongly related to each other, meaning customers who spend heavily in one category often spend heavily in others. Income, recency of purchase, and total spending appear to be particularly important variables for identifying meaningful customer segments.
 
-![alt text](image-7.png)
+![alt text](images/correlation_heatmap.png)
 
----
+
 
 #### Key Insights for Segmentation
-The analysis shows clear differences in income levels, spending behavior, product preferences, and purchasing channels. Wines and meat products dominate overall spending, and store purchases are the most common transaction method. Age, income, and household structure strongly influence buying behavior. Before building segmentation models, income gaps must be filled, outliers must be treated, and features must be scaled appropriately.
+The analysis shows clear differences in income levels, spending behavior, product preferences, and purchasing channels. Wines and meat products dominate overall spending, and store purchases are the most common transaction method. Age, income, and household structure strongly influence buying behavior. Before building segmentation models, income gaps must be filled, outliers must be treated, and features must be scaled appropriately (during data preprocessing/cleaning).
 
 ---
 
@@ -270,8 +286,8 @@ We selected **K-Means clustering** because it works exceptionally well with nume
 
 This project produced a validated customer segmentation model that grouped customers into **four clear behavioral segments** based on how recently they purchase, how often they buy, and how much they spend. The model was tested using both the **Elbow Method** and **Silhouette Score**, which confirmed that four segments provide the best balance between clarity and accuracy. The final deliverables include the cleaned dataset, RFM feature framework, clustering model, validation analysis, PCA visualization, and executive-ready materials.  
 
-![alt text](image-8.png) 
-![alt text](image-9.png)
+![alt text](images/elbow_and_silhoutte_score.png) 
+![alt text](images/customer_segments_visualized_in_2D.png)
 
 The key finding is that customers naturally fall into four meaningful groups: high-value customers, loyal repeat buyers, at-risk customers who may stop purchasing, and low-engagement customers with growth potential. These segments are easy to understand and can be directly used by the marketing team to create targeted campaigns instead of sending the same message to everyone. To implement this, customers should be tagged by segment in the CRM system, campaigns should be tailored to each group, and performance should be tracked regularly to measure ROI and monitor customer movement between segments.
 
@@ -281,27 +297,42 @@ There are some limitations to consider. The model is based only on purchasing be
 #### Next Steps
 Next steps include integrating the segmentation into marketing systems, launching segment-specific campaigns, tracking results through A/B testing, and periodically retraining the model as new data becomes available. With proper implementation, this segmentation provides a strong foundation for personalized marketing, improved retention, and long-term revenue growth.
 
+### Changes Made to the Original Plan
+
+During the project, several adjustments were made to improve the reliability and interpretability of the results. Initially, the team planned to build both segmentation and predictive models together in a single integrated pipeline. However, after exploratory analysis, we prioritized developing a strong customer segmentation model first to better understand customer behavior before attempting predictive modeling. Multiple clustering configurations were evaluated, and the final model was selected based on validation metrics such as the Elbow Method and Silhouette Score, ensuring the segments were both well-separated and meaningful for business use.
 
 ### Visuals and Credits
 
-![alt text](image-10.png)
 
-<br>
+#### Customer Behavior by Segment (RFM Analysis)
 
-![alt text](image-11.png)
+![Customer Segmentation RFM](images/clustering_boxplot.png)
 
-<br>
+These boxplots compare how recently customers purchased (Recency), how often they buy (Frequency), and how much they spend (Monetary), showing clear behavioral differences between potential loyal customers, loyal customers, new/occasional buyers, and at-risk or low-value customers.
 
-![alt text](image-12.png)
+---
+
+#### Revenue Contribution by Customer Segment
+
+![Revenue Contribution](images/revenue_contribution_by_segment.png)
+
+This chart shows how much total revenue each customer segment contributes, highlighting that loyal customers and potential loyal customers generate the largest share of overall revenue.
+
+---
+
+#### Silhouette Score Validation (k = 4 Clusters)
+
+![Silhouette Plot](images/silhoutte_k_4.png)
+
+This silhouette plot confirms that four clusters provide well-separated and meaningful customer groups, indicating that the segmentation model effectively distinguishes different purchasing behaviors.
+
+---
 
 
 ### Models
 - See [Models](models/) folder
 
 #### Ethical Implications / Biases:
-<input type="checkbox">
-<label>Ethical implications or biases associated with our machine learning model</label><br>
-
 
 Although the model uses only purchasing behavior (Recency, Frequency, and Monetary value), it may still introduce bias because it relies on historical data. Customers who already spend more may continue receiving better offers, while lower-spending customers may receive fewer benefits, potentially widening engagement gaps. The model also reflects past marketing strategies and does not account for personal or economic circumstances.
 
@@ -317,7 +348,7 @@ Customer data must be handled securely and transparently, and the segmentation s
 - **Saraneya Maheswaran** – project management/task coordination, GitHub repository management, project documentation and reporting (README), model experimentation and evaluation
 - **Iris Jiongco** – data preprocessing, README contributor, model experimentation and evaluation
 - **David Ancor** –  model development and evaluation (customer segmentation, clustering, RFM analysis, CLV), slide deck preparation, team meeting organization
-- **Anika Chowdhury** – model development and evaluation (clustering, customer segmentation), code/peer review and quality assurance
+- **Anika Chowdhury** – model development and evaluation (clustering, customer segmentation), model integration exploration, code/peer review and quality assurance
 
 
 
