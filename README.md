@@ -111,7 +111,7 @@ Analyses for this customer segmentation project were conducted using **Python 3.
 
 The project leveraged key libraries including **pandas**, **numpy**, **scikit-learn**, **matplotlib** and **seaborn** for data manipulation, visualization, clustering, and predictive modeling.  
 
-Any random seeds or states used to ensure reproducibility are documented directly in the notebooks within the [Models](Models) folder. 
+Any random seeds or states used to ensure reproducibility are documented directly in the notebooks within the [Models](models) folder. 
 
 ## Exploratory Data Analysis
 
