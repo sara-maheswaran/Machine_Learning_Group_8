@@ -254,7 +254,7 @@ Based on an assumption of a $500 marketing cost for each segment, converting 20%
 >See .PDF file under [Reports](reports) folder.
 
 ### Individual Reflection Videos:
-- [Shaifali Tailor](http://google.com)
+- [Shaifali Tailor](https://drive.google.com/file/d/1_RKUqadRmIvS5ufpBqnKEdVIetmszooO/view?usp=drive_link)
 - [Iris Jiongco](https://drive.google.com/file/d/1243wA1KVSzv2cpAaaUWnwDds66IExJrY/view?usp=sharing) 
 - [Saraneya Maheswaran](https://drive.google.com/file/d/1D9wdwq17ArXmoY7V5QFk4QgxlXBysynk/view?usp=sharing)
 - [David Ancor](http://google.com)
