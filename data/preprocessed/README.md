@@ -4,7 +4,7 @@
 
 Before building segmentation and predictive models, we cleaned the dataset to ensure that insights would be accurate, reliable, and meaningful.  
 
-Raw marketing data often contains inconsistencies, extreme values, and formatting issues that can distort clustering algorithms and regression models. Proper preprocessing ensures that patterns we identify reflect real customer behavior — not data noise.
+Raw marketing data often contains inconsistencies, extreme values, and formatting issues that can distort clustering algorithms and regression models. Proper preprocessing ensures that patterns we identify reflect real customer behavior -- not data noise.
 
 ---
 
@@ -99,3 +99,4 @@ After preprocessing:
 - Data optimized for clustering, RFM segmentation, and CLV modeling  
 
 This preprocessing step ensured that subsequent segmentation and predictive models were based on clean, structured, and business-relevant data.
+
