@@ -257,11 +257,13 @@ Based on an assumption of a $500 marketing cost for each segment, converting 20%
 - [Shaifali Tailor](https://drive.google.com/file/d/1_RKUqadRmIvS5ufpBqnKEdVIetmszooO/view?usp=drive_link)
 - [Iris Jiongco](https://drive.google.com/file/d/1243wA1KVSzv2cpAaaUWnwDds66IExJrY/view?usp=sharing) 
 - [Saraneya Maheswaran](https://drive.google.com/file/d/1D9wdwq17ArXmoY7V5QFk4QgxlXBysynk/view?usp=sharing)
-- [David Ancor](http://google.com)
+- [David Ancor](https://drive.google.com/file/d/1LzMs1hZ0LzBlkGlupkr-d0PiPRu5LDsQ/view?usp=sharing)
 - [Anika Choudhury](https://drive.google.com/file/d/1yFYFhio_bAVAqqb0VbPRBGo2nd1rVUX3/view?usp=drive_link)
 - [Stella Hoang](https://drive.google.com/file/d/1EJQsNSQDshckSP_-ZoT7wQqsVc1L3Hn-/view?usp=sharing)
 
-
+David's full feature clustering for marketing campaign guidance: experiments/david_kmeans_clustering.ipynb 
+David's campaign performance prediction and ROI simulation : experiments/david_performance_classification.ipynb
+CLV ML regression vs Probalistic Modeling experiments/david_clv_comparison.ipynb 
 
 # **Repository Structure:**
 
